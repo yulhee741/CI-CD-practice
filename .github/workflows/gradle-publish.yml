@@ -37,10 +37,10 @@ jobs:
         password: ${{secrets.DOCKERHUB_TOKEN}}
 
     - name: build and release to DockerHub
-        env:
-          NAME: dbfgml741 # 계정 명
-          REPO: CI-CD-practice # 레포 이름
-        run: |
-          docker build -t $REPO .
-          docker tag $REPO:latest $NAME/$REPO:latest
-          docker push $NAME/$REPO:latest
+      env:
+        NAME: dbfgml741 # 계정 명
+        REPO: CI-CD-practice # 레포 이름
+      run: |
+        docker build -t $REPO .
+        docker tag $REPO:latest $NAME/$REPO:latest
+        docker push $NAME/$REPO:latest
